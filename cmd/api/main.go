@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/seu-usuario/weather-cep/internal/api/handlers"
+	"github.com/joaovitordesp/weather-cep/internal/api/handlers"
 )
 
 func main() {

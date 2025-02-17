@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/seu-usuario/weather-cep/internal/models"
-	"github.com/seu-usuario/weather-cep/internal/services/viacep"
-	"github.com/seu-usuario/weather-cep/internal/services/weather"
+	"github.com/joaovitordesp/weather-cep/internal/models"
+	"github.com/joaovitordesp/weather-cep/internal/services/viacep"
+	"github.com/joaovitordesp/weather-cep/internal/services/weather"
 )
 
 func HandleWeather(w http.ResponseWriter, r *http.Request) {

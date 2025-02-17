@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	
-	"github.com/seu-usuario/weather-cep/internal/models"
+
+	"github.com/joaovitordesp/weather-cep/internal/models"
 )
 
 type WeatherResponse struct {

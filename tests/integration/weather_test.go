@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/seu-usuario/weather-cep/internal/api/handlers"
+	"github.com/joaovitordesp/weather-cep/internal/api/handlers"
 )
 
 func TestHandleWeather(t *testing.T) {
