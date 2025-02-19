@@ -10,7 +10,6 @@ import (
 
 func main() {
 	http.HandleFunc("/weather/", handlers.HandleWeather)
-	port := "8080"
-	fmt.Printf("Servidor rodando na porta %s...\n", port)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
-} 
+	fmt.Printf("Servidor rodando na porta 8080...")
+	log.Fatal(http.ListenAndServe(":8080", nil))
+}

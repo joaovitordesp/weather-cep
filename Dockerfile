@@ -1,11 +1,9 @@
 FROM golang:1.20-alpine
-
 WORKDIR /app
-
 COPY . .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o  cloudrun
 
-RUN go build -o /weather-cep ./cmd/api
-
-EXPOSE 8080
-
-CMD ["/weather-cep"] 
+FROM scratch
+WORKDIR /app
+COPY --from=build /app/cloudrun .
+ENTRYPOINT [ "cloudrun" ]
