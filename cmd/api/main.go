@@ -1,15 +1,22 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/joaovitordesp/weather-cep/internal/api/handlers"
 )
 
 func main() {
 	http.HandleFunc("/weather/", handlers.HandleWeather)
-	fmt.Printf("Servidor rodando na porta 8080...")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	log.Printf("Listening on port %s", port)
+	err := http.ListenAndServe(":"+port, nil)
+	if err != nil {
+		log.Fatal("ListenAndServe: ", err)
+	}
 }
